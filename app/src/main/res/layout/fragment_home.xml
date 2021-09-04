@@ -7,112 +7,23 @@
     android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
+    <FrameLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        android:id="@+id/fl_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemIconTint="@color/color_selector"
+        app:itemTextColor="@color/color_selector"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/streamImg"
-            android:id="@+id/watchlistImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star" />
-
-        <TextView
-            app:layout_constraintTop_toBottomOf="@id/watchlistImg"
-            app:layout_constraintStart_toStartOf="@id/watchlistImg"
-            app:layout_constraintEnd_toEndOf="@id/watchlistImg"
-            android:textSize="9sp"
-            android:id="@+id/watchListText"
-            android:text="Watchlist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
-            app:layout_constraintStart_toEndOf="@id/watchlistImg"
-            app:layout_constraintEnd_toStartOf="@id/searchImg"
-            android:id="@+id/streamImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_home" />
-
-        <TextView
-            app:layout_constraintTop_toBottomOf="@id/streamImg"
-            app:layout_constraintStart_toStartOf="@id/streamImg"
-            app:layout_constraintEnd_toEndOf="@id/streamImg"
-            android:textSize="9sp"
-            android:id="@+id/streamText"
-            android:text="Stream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
-            app:layout_constraintStart_toEndOf="@id/streamImg"
-            app:layout_constraintEnd_toStartOf="@id/chatImg"
-            android:id="@+id/searchImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_home" />
-
-        <TextView
-            app:layout_constraintTop_toBottomOf="@id/searchImg"
-            app:layout_constraintStart_toStartOf="@id/searchImg"
-            app:layout_constraintEnd_toEndOf="@id/searchImg"
-            android:textSize="9sp"
-            android:id="@+id/searchText"
-            android:text="Search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
-            app:layout_constraintStart_toEndOf="@id/searchImg"
-            app:layout_constraintEnd_toStartOf="@id/portofolioImg"
-            android:id="@+id/chatImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_home" />
-
-        <TextView
-            app:layout_constraintTop_toBottomOf="@id/chatImg"
-            app:layout_constraintStart_toStartOf="@id/chatImg"
-            app:layout_constraintEnd_toEndOf="@id/chatImg"
-            android:textSize="9sp"
-            android:id="@+id/chatText"
-            android:text="Chat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
-            app:layout_constraintStart_toEndOf="@id/chatImg"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/portofolioImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_home" />
-
-        <TextView
-            app:layout_constraintTop_toBottomOf="@id/portofolioImg"
-            app:layout_constraintStart_toStartOf="@id/portofolioImg"
-            app:layout_constraintEnd_toEndOf="@id/portofolioImg"
-            android:textSize="9sp"
-            android:id="@+id/portofolioText"
-            android:text="Portofolio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

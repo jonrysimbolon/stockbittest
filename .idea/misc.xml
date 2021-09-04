@@ -3,17 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/drawable_selector.xml" value="0.17447916666666666" />
+        <entry key="app/src/main/res/drawable/drawable_selector.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/drawable/ic_desc.xml" value="0.184375" />
         <entry key="app/src/main/res/drawable/ic_hamburger.xml" value="0.184375" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.21388888888888888" />
+        <entry key="app/src/main/res/drawable/ic_logout.xml" value="0.21388888888888888" />
+        <entry key="app/src/main/res/drawable/ic_portofolio.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.21388888888888888" />
+        <entry key="app/src/main/res/drawable/ic_stream.xml" value="0.175" />
         <entry key="app/src/main/res/layout/abs_layout.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_login_page.xml" value="0.2907692307692308" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.32344763670064874" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2907692307692308" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.14427083333333332" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_portofolio.xml" value="0.14427083333333332" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.14427083333333332" />
+        <entry key="app/src/main/res/layout/fragment_stream.xml" value="0.14427083333333332" />
+        <entry key="app/src/main/res/layout/fragment_watchlist.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/main2_activity.xml" value="0.16" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2907692307692308" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.15833333333333333" />
         <entry key="navigation/src/main/res/layout/fragment_home.xml" value="0.153125" />
       </map>
     </option>
