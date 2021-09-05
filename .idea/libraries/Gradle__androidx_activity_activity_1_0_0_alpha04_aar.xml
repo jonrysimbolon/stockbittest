@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.activity:activity:1.0.0-alpha04@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e503ffeadf4a606d969112d40a0b9ec8/jetified-activity-1.0.0-alpha04/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21a1b74847fb3a7acb889c405c820569/jetified-activity-1.0.0-alpha04/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21a1b74847fb3a7acb889c405c820569/jetified-activity-1.0.0-alpha04/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21a1b74847fb3a7acb889c405c820569/jetified-activity-1.0.0-alpha04/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.activity/activity/1.0.0-alpha04/381216c204d2ede6a023004b782c2f80a797086f/activity-1.0.0-alpha04-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

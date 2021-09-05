@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".CoinAdapter">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/nameCoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameFullCoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="nama lengkap"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/nameCoinText"
+            app:layout_constraintTop_toBottomOf="@id/nameCoinText" />
+
+        <TextView
+            android:id="@+id/priceCoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="price"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/changeCoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="change coin"
+            android:textColor="@color/grayslow"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/priceCoinText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grayslow"
+        app:layout_constraintTop_toBottomOf="@id/layoutAdapter" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

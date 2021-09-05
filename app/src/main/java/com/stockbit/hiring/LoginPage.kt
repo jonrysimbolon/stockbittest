@@ -11,9 +11,6 @@ class LoginPage : AppCompatActivity() {
 
     lateinit var penghubungInterface: PenghubungInterface
 
-    /*penghubungInterface.go(MainActivity::class.java)
-    overridePendingTransition(R.anim.slide_left_enter,R.anim.slide_left_exit)*/
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page)
@@ -25,6 +22,36 @@ class LoginPage : AppCompatActivity() {
         daftarBtn.setOnClickListener {
             penghubungInterface.go(DaftarPage::class.java)
             overridePendingTransition(R.anim.slide_left_enter,R.anim.slide_left_exit)
+        }
+        loginBtn.setOnClickListener {
+            if(userEmailBox.text.toString().isNotEmpty() && passwordBox.text.toString().isNotEmpty()){
+                val cursor = penghubungInterface.createDatabase().rawQuery("Select * from userTbl where username = '${userEmailBox.text}' or email = '${userEmailBox.text}' and password = '${penghubungInterface.getMD5(passwordBox.text.toString())}'", null, null)
+                if (cursor.count != 0) {
+                    if (cursor.moveToFirst()) {
+                        if (!cursor.isAfterLast) {
+                            val uuid_member = cursor.getString(1)
+                            val email = cursor.getString(2)
+                            val username = cursor.getString(3)
+
+                            penghubungInterface.editDataPerson("uuid_member", uuid_member)
+                            penghubungInterface.editDataPerson("email", email)
+                            penghubungInterface.editDataPerson("username", username)
+
+                            penghubungInterface.toastC("Berhasil login")
+
+                            penghubungInterface.go(MainActivity::class.java)
+                            overridePendingTransition(
+                                R.anim.slide_left_enter,
+                                R.anim.slide_left_exit
+                            )
+                        }
+                    }
+                }else{
+                    penghubungInterface.toastC("Informasi yang anda input salah.")
+                }
+            }else{
+                penghubungInterface.toastC("Harap isi data yang tersedia dengan lengkap dan benar")
+            }
         }
     }
 

@@ -9,17 +9,21 @@ import android.util.Log
  * Created by Lenovo on 10/25/2017.
  */
 
-class MakeDataBaseDataAC(context: Context) : SQLiteOpenHelper(context,
+class MakeDataBase(context: Context) : SQLiteOpenHelper(context,
     DATABASE_NAME, null,
     DATABASE_VERSION
 ) {
 
     override fun onCreate(sqLiteDatabase: SQLiteDatabase) {
-        /*val sql1 = "create table tireList(id integer primary key autoincrement, " +
-                "kode_tire text null" +
+        val sql1 = "create table userTbl(id integer primary key autoincrement, " +
+                "uuid_member text null," +
+                "email text null," +
+                "username text null," +
+                "password text null," + //md5
+                "type text null" + //google, fb, default
                 ");"
         Log.d("Data", "sql: $sql1")
-        sqLiteDatabase.execSQL(sql1)*/
+        sqLiteDatabase.execSQL(sql1)
 
     }
 

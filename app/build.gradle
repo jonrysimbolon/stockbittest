@@ -26,10 +26,14 @@ dependencies {
     implementation Libraries.koin
     implementation Libraries.koinViewModel
     implementation Libraries.retrofit1
+    implementation Libraries.swipy
     // ANDROID
     implementation AndroidLibraries.constraintLayout
     implementation AndroidLibraries.appCompat
     implementation AndroidLibraries.navigation
     implementation AndroidLibraries.navigationFrag
     implementation AndroidLibraries.appCompat
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 }

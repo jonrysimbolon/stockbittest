@@ -1,8 +1,10 @@
 package com.stockbit.hiring
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main2_activity)
         penghubungInterface = PenghubungInterface(this)
+        penghubungInterface.editDataPerson("limitKoinAkhir","")
 
         val toolBar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolBar)
@@ -41,6 +44,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val menuImg = view?.findViewById<ImageView>(R.id.menuImg)
 
         mNavView = findViewById(R.id.nav_view)
+
+        val usernameText = mNavView.getHeaderView(0).findViewById<TextView>(R.id.usernameText)
+        usernameText.text = penghubungInterface.putData("username")
+        val emailText = mNavView.getHeaderView(0).findViewById<TextView>(R.id.emailText)
+        emailText.text = penghubungInterface.putData("email")
+
         mNavView.setNavigationItemSelectedListener(this)
 
         mDrawer_layout = findViewById(R.id.drawer_layout)
@@ -86,8 +95,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_home -> Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
-            R.id.nav_logout -> Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+            R.id.nav_home -> {
+                penghubungInterface.go(MainActivity::class.java)
+                overridePendingTransition(0,0)
+            }
+            R.id.nav_logout -> {
+                penghubungInterface.showMessageOKCancel("Apakah anda ingin logout ?",
+                    { dialogInterface, i ->
+                        penghubungInterface.delDataPerson("uuid_member")
+                        penghubungInterface.delDataPerson("email")
+                        penghubungInterface.delDataPerson("username")
+                        penghubungInterface.toastC("Logout berhasil")
+                        penghubungInterface.go(DaftarLoginPage::class.java)
+                        overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
+                    },
+                    { dialogInterface, i ->
+                        dialogInterface.dismiss()
+                    })
+            }
         }
         //if(item.itemId != 0){
             mDrawer_layout.closeDrawer(GravityCompat.START)

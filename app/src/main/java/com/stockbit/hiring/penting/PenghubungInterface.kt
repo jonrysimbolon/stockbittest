@@ -19,10 +19,9 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.google.android.material.snackbar.Snackbar
 import com.stockbit.hiring.R
 import id.viharaumat.FileUtama.InterfaceRetro
-import id.viharaumat.FileUtama.MakeDataBaseDataAC
+import id.viharaumat.FileUtama.MakeDataBase
 import retrofit.RestAdapter
 import java.math.BigInteger
 import java.security.MessageDigest
@@ -36,13 +35,13 @@ class PenghubungInterface(val context: Context) {
     lateinit var fontr: Typeface
     lateinit var fonts: Typeface
 
-    var ip = "URL_BASE_NYA"
+    var ip = "https://min-api.cryptocompare.com/data/top"
 
     var max = 999999
     var min = 111111
     var datapersonal: SharedPreferences =
         context.getSharedPreferences("datapersonal", Context.MODE_PRIVATE)
-    lateinit var editPesanMotor: SharedPreferences.Editor
+    lateinit var editDatapersonal: SharedPreferences.Editor
     var rand = Random()
     internal var header: View? = null
 
@@ -105,7 +104,7 @@ class PenghubungInterface(val context: Context) {
     }
 
     fun createDatabase(): SQLiteDatabase {
-        val makeDataBaseDataAC = MakeDataBaseDataAC(context)
+        val makeDataBaseDataAC = MakeDataBase(context)
         return makeDataBaseDataAC.writableDatabase
     }
 
@@ -121,7 +120,7 @@ class PenghubungInterface(val context: Context) {
         val toast: Toast = Toast.makeText(context, data, Toast.LENGTH_LONG)
         val view = toast.view
         //view!!.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
-        view!!.background.setColorFilter(ContextCompat.getColor(context, R.color.red), PorterDuff.Mode.SRC_IN);
+        view!!.background.setColorFilter(ContextCompat.getColor(context, R.color.green), PorterDuff.Mode.SRC_IN);
         val text = view.findViewById<TextView>(android.R.id.message)
         text.setTextColor(ContextCompat.getColor(context,R.color.white))
         toast.show()
@@ -376,6 +375,18 @@ class PenghubungInterface(val context: Context) {
 
     fun putData(data: String): String? {
         return datapersonal.getString(data, "")
+    }
+
+    public fun editDataPerson(initial: String, data: String) {
+        editDatapersonal = datapersonal.edit()
+        editDatapersonal.putString(initial, data)
+        editDatapersonal.apply()
+    }
+
+    public fun delDataPerson(initial: String) {
+        editDatapersonal = datapersonal.edit()
+        editDatapersonal.remove(initial)
+        editDatapersonal.apply()
     }
 
     fun SendRetro(): InterfaceRetro {

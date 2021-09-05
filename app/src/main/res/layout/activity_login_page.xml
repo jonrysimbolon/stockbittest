@@ -102,7 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Username of Email"
+        android:hint="Username or Email"
         android:theme="@style/EditTextTheme"
         app:layout_constraintTop_toBottomOf="@id/atauText" />
 
