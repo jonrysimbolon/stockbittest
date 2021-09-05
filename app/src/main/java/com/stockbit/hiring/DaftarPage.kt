@@ -2,6 +2,7 @@ package com.stockbit.hiring
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.stockbit.hiring.penting.PenghubungInterface
 import kotlinx.android.synthetic.main.activity_daftar_page.*
 
 class DaftarPage : AppCompatActivity() {

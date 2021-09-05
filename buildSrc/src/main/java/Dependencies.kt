@@ -33,6 +33,7 @@ object Versions {
     val junit = "4.12"
     val androidTestRunner = "1.1.2-alpha02"
     val espressoCore = "3.2.0-alpha02"
+    val retrofit1 = "1.9.0"
     val retrofit = "2.8.1"
     val retrofitCoroutines = "0.9.2"
     val retrofitGson = "2.8.1"
@@ -64,6 +65,7 @@ object Libraries {
     val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     // RETROFIT
     val gson = "com.google.code.gson:gson:${Versions.gson}"
+    val retrofit1 = "com.squareup.retrofit:retrofit:${Versions.retrofit1}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofitGson}"
     val httpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"

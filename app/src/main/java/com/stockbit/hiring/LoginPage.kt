@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
+import com.stockbit.hiring.penting.PenghubungInterface
 import kotlinx.android.synthetic.main.activity_login_page.*
 
 class LoginPage : AppCompatActivity() {

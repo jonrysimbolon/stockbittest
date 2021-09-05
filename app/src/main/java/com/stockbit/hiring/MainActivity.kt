@@ -1,8 +1,6 @@
 package com.stockbit.hiring
 
 import android.os.Bundle
-import android.util.Log
-import android.view.Gravity
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
@@ -13,12 +11,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.stockbit.hiring.penting.PenghubungInterface
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
