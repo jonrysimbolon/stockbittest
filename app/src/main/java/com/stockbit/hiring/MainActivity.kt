@@ -1,6 +1,7 @@
 package com.stockbit.hiring
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import android.widget.ImageView
@@ -26,15 +27,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var mActionBarDrawerToggle: ActionBarDrawerToggle
     lateinit var mDrawer_layout: DrawerLayout
     lateinit var mNavView: NavigationView
+    lateinit var penghubungInterface: PenghubungInterface
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main2_activity)
+        penghubungInterface = PenghubungInterface(this)
 
         val toolBar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolBar)
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
-        supportActionBar?.setCustomView(R.layout.abs_layout)
+        supportActionBar?.setCustomView(R.layout.top_main_layout)
 
         val view = supportActionBar?.customView
         val menuImg = view?.findViewById<ImageView>(R.id.menuImg)
@@ -63,7 +66,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (mDrawer_layout.isDrawerOpen(GravityCompat.START)) {
             mDrawer_layout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            if(penghubungInterface.putData("uuid_member") != "") {
+                penghubungInterface.go(MainActivity::class.java)
+                overridePendingTransition(0,0)
+            }else{
+                penghubungInterface.go(LoginPage::class.java)
+                overridePendingTransition(R.anim.slide_right_exit,R.anim.slide_right_enter)
+            }
         }
     }
 

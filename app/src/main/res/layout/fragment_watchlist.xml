@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".home.fragment.WatchlistFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Watchlist" />
+        android:layout_height="match_parent"
+        android:id="@+id/listCoint"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

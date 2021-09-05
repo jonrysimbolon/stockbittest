@@ -13,9 +13,18 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:label=""
+            android:screenOrientation="portrait"
             android:name=".LoginPage"
             android:exported="true" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:label=""
+            android:screenOrientation="portrait"
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:label=""
+            android:name=".DaftarLoginPage"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
