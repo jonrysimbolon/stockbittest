@@ -34,7 +34,11 @@ class DaftarPage : AppCompatActivity() {
                     .isNotEmpty() && passwordBox.text.toString().isNotEmpty()
             ) {
                 val uuid_member = UUID.randomUUID().toString()
-                penghubungInterface.createDatabase().execSQL("insert into userTbl(uuid_member,email,username,password,type) values('$uuid_member','${emailBox.text}','${usernameBox.text}','${penghubungInterface.getMD5(passwordBox.text.toString())}','default')")
+                penghubungInterface.createDatabase().execSQL(
+                    "insert into userTbl(uuid_member,email,username,password,type) values('$uuid_member','${emailBox.text}','${usernameBox.text}','${
+                        penghubungInterface.getMD5(passwordBox.text.toString())
+                    }','default')"
+                )
                 penghubungInterface.showMessageOK("Pendaftaran berhasil dilakukan.\nSilahkan melakukan proses login.") { dialogInterface, i ->
                     penghubungInterface.go(LoginPage::class.java)
                     overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
@@ -42,6 +46,12 @@ class DaftarPage : AppCompatActivity() {
             } else {
                 penghubungInterface.toastC("Silahkan isi data diatas dengan lengkap dan benar")
             }
+        }
+        googleMskBtn.setOnClickListener {
+
+        }
+        fbMskBtn.setOnClickListener {
+
         }
     }
 
