@@ -7,6 +7,9 @@
     android:background="@color/white"
     tools:context=".DaftarLoginPage">
 
+    <include
+        layout="@layout/top_daflog_layout"/>
+
     <ImageView
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/daftarBtn"

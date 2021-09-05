@@ -5,22 +5,159 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:padding="20dp"
     tools:context=".LoginPage">
 
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/titleLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masuk"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/supportImg"
+        app:layout_constraintStart_toEndOf="@id/backBtn" />
+
+    <ImageView
+        android:id="@+id/supportImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_headphones"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:layout_marginEnd="20dp"
+        android:id="@+id/googleMskBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/transparent2_btn"
+        android:drawableStart="@drawable/ic_google"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        android:text="Masuk dengan Google"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
-        android:background="@drawable/buttonbackground"
-        android:textColor="@color/white"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toTopOf="@id/viewBottom"
-        app:layout_constraintStart_toEndOf="@id/daftarBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/loginBtn"
-        android:text="Login"
+        app:layout_constraintTop_toBottomOf="@id/titleLogin" />
+
+    <Button
+        android:id="@+id/fbMskBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/transparent2_btn"
+        android:drawableStart="@drawable/ic_fb"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        android:text="Masuk dengan Facebook"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@id/googleMskBtn" />
+
+    <View
+        android:id="@+id/view1"
         android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/grayslowww"
+        app:layout_constraintBottom_toBottomOf="@id/atauText"
+        app:layout_constraintEnd_toStartOf="@id/atauText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/atauText" />
+
+    <TextView
+        android:id="@+id/atauText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Atau"
+        android:textColor="@color/grayslo"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/view2"
+        app:layout_constraintStart_toEndOf="@id/view1"
+        app:layout_constraintTop_toBottomOf="@id/fbMskBtn" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:background="@color/grayslowww"
+        app:layout_constraintBottom_toBottomOf="@id/atauText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/atauText"
+        app:layout_constraintTop_toTopOf="@id/atauText" />
+
+    <EditText
+        android:id="@+id/userEmailBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Username of Email"
+        android:theme="@style/EditTextTheme"
+        app:layout_constraintTop_toBottomOf="@id/atauText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordShadowoBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/userEmailBox"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/grayslow">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:theme="@style/EditTextTheme" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lupaPassText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Lupa Password"
+        android:textColor="@color/green"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordShadowoBox" />
+
+    <Button
+        android:text="Login"
+        android:layout_marginTop="20dp"
+        android:id="@+id/loginBtn"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbackground2"
+        app:layout_constraintTop_toBottomOf="@id/lupaPassText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/daftarBtn"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginBtn"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

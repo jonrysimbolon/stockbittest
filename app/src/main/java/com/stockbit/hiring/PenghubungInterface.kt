@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
@@ -18,6 +19,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.snackbar.Snackbar
 import java.math.BigInteger
@@ -120,7 +122,12 @@ class PenghubungInterface(val context: Context) {
     }
 
     fun toastC(data: String) {
-        Toast.makeText(context, data, Toast.LENGTH_LONG).show()
+        val toast: Toast = Toast.makeText(context, data, Toast.LENGTH_LONG)
+        val view = toast.view
+        view!!.background.setColorFilter(ContextCompat.getColor(context, R.color.white), PorterDuff.Mode.SRC_IN);
+        val text = view.findViewById<TextView>(android.R.id.message)
+        text.setTextColor(ContextCompat.getColor(context,R.color.green))
+        toast.show()
     }
 
     fun toastt(data: Int) {

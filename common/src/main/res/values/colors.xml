@@ -6,4 +6,10 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="red">#E80202</color>
+    <color name="green">#718C37</color>
+    <color name="gray">#aaa</color>
+    <color name="grayslo">#CFCECE</color>
+    <color name="grayslow">#D5D4D4</color>
+    <color name="graysloww">#E3E3E3</color>
+    <color name="grayslowww">#EDEDED</color>
 </resources>
